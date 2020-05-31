@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deno Chat</title>
+</head>
+<body></body>
+<script type="module">
+  import { html, render, useEffect, useState } from 'https://unpkg.com/htm/preact/standalone.module.js';
+  let ws;
+  // Chat Component
+  const Chat = () => {
+    const [messages, setMessages] = useState([]);
+    const onReceiveMessage = ({ data }) => setMessages(msgs => ([...msgs, data]));
+
+    useEffect(() => {
+      if (ws) ws.close();
+      ws = new WebSocket(`ws://${window.location.host}/ws`);
+      ws.addEventListener('message', onReceiveMessage);
+      return () => {
+        ws.removeEventListener('message', onReceiveMessage);
+      }
+    }, [])
+
+    const onSendMessage = e => {
+      const msg = e.target[0].value;
+      e.preventDefault();
+      ws.send(msg);
+      e.target[0].value = '';
+    };
+
+    return html`
+      <div>
+        ${messages.map(msg => {
+          return html`<p>${msg}</p>`
+        })}
+        ${messages.length > 0 && html`<hr />`}
+        <form onSubmit=${onSendMessage}>
+          <input type="text" />
+          <button>send</button>
+        </form>
+      </div>
+    `;
+  }
+
+  render(html`<${Chat} />`, document.body);
+</script>
+</html>
