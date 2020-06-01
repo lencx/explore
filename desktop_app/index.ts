@@ -1,8 +1,13 @@
+/**
+ * @author: lencx
+ * @create_at: Jun 02, 2020
+ */
+
 import { WebView } from "https://deno.land/x/webview/mod.ts";
 
 const sharedOptions = {
   width: 400,
-  height: 200,
+  height: 400,
   resizable: true,
   debug: true,
   frameless: false,
@@ -14,7 +19,7 @@ const html = (n: number) =>
   <body>
     <h1>${n}</h1>
     <input />
-    <button>send</button>
+    <button onclick="alert(${n})">send</button>
   </body>
   </html>
 `;
@@ -22,21 +27,13 @@ const html = (n: number) =>
 const webview1 = new WebView({
   title: "Dchat",
   url: `data:text/html,${encodeURIComponent(html(1))}`,
-  width: 400,
-  height: 200,
-  resizable: true,
-  debug: true,
-  frameless: false,
+  ...sharedOptions,
 });
 
 const webview2 = new WebView({
   title: "Dchat",
   url: `data:text/html,${encodeURIComponent(html(2))}`,
-  width: 400,
-  height: 200,
-  resizable: true,
-  debug: true,
-  frameless: false,
+  ...sharedOptions,
 });
 
 await Promise.all([webview1.run(), webview2.run()]);
