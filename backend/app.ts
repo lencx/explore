@@ -1,37 +1,31 @@
 /**
  * @author: lencx
  * @create_at: Jun 01, 2020
+ * @cmd: deno run --allow-net --allow-read backend/app.ts
  */
 
-import { listenAndServe } from 'https://deno.land/std/http/server.ts';
-import { config } from 'https://deno.land/x/dotenv/mod.ts';
-import clc from 'https://deno.land/x/color/index.ts';
-import { acceptable, acceptWebSocket } from 'https://deno.land/std/ws/mod.ts';
+import { Application, Router, dotEnvConfig } from './deps.ts';
+import handleHtml from './routes/html.ts';
+import handleChat from './routes/chat.ts';
 
-import { chat } from './chat.ts';
+const app = new Application();
+const router = new Router();
+const env = dotEnvConfig();
 
-const port = parseInt(config()['PORT']);
+const port = +env.PORT || 6300;
+const host = env.HOST || 'localhost';
 
-listenAndServe({ port }, async (req) => {
-  if (req.method === 'GET' && req.url === '/') {
-    req.respond({
-      status: 200,
-      headers: new Headers({ 'Content-Type': 'text/html' }),
-      body: await Deno.open('./frontend/index.html')
-    });
-  }
+app.use(router.routes());
+app.use(router.allowedMethods());
 
-  // WebSocket chat
-  if (req.method === 'GET' && req.url === '/ws') {
-    if (acceptable(req)) {
-      acceptWebSocket({
-        conn: req.conn,
-        bufReader: req.r,
-        bufWriter: req.w,
-        headers: req.headers,
-      }).then(chat);
-    }
-  }
-})
+router
+  .get('/', handleHtml) // render home page
+  .get('/ws', handleChat); // webSocket
 
-console.info('\n🚀', clc.blue.text(`http://localhost:${port}`), '\n');
+app.addEventListener('listen', ({ secure, hostname, port }) => {
+  const protocol = secure ? 'https' : 'http';
+  const url = `${protocol}://${hostname ?? host}:${port}`;
+  console.log(`🚀 ${url}`);
+});
+
+await app.listen({ port });

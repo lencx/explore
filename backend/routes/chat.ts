@@ -3,19 +3,19 @@
  * @create_at: Jun 01, 2020
  */
 
-import { WebSocket, isWebSocketCloseEvent } from 'https://deno.land/std/ws/mod.ts';
-import { v4 } from 'https://deno.land/std/uuid/mod.ts';
+import { WebSocket, isWebSocketCloseEvent, v4 } from '../deps.ts';
 
 const users = new Map<string, WebSocket>();
 
-function broadcast(message: string, senderId?: string) {
+function broadcast(message: string, senderId?: string): void {
+  if (!message) return;
   for (const user of users.values()) {
     // Send message
     user.send(senderId ? `💭 [${senderId}]: ${message}` : message);
   }
 }
 
-export async function chat(ws: WebSocket): Promise<void> {
+async function chat(ws: WebSocket): Promise<void> {
   const userId = v4.generate();
 
   const _user = `[👤${userId}]`;
@@ -36,4 +36,10 @@ export async function chat(ws: WebSocket): Promise<void> {
       break;
     }
   }
+}
+
+export default async function handleChat(ctx: any) {
+  // handle webSockets: https://github.com/oakserver/oak/pull/137
+  const sock = await ctx.upgrade();
+  chat(sock);
 }
