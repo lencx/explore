@@ -1,0 +1,4 @@
+[33m[backend]
+|    `-<app.ts>[39m: [32mdeno run --allow-net --allow-read backend/app.ts[39m
+[33m[dart_learn]
+|    `-<symbol.dart>[39m: [32mdart dart_learn/symbol.dart[39m
