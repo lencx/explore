@@ -21,6 +21,9 @@ denon run --allow-net --allow-read backend/app.ts
 open -a Simulator
 
 flutter run
+
+# format check
+./app/fmt.sh
 ```
 
 ```bash
@@ -42,6 +45,7 @@ flutter run
 ## TODO
 
 * [ ] use `flutter` to develop APP
+* [ ] use [`tauri`](https://github.com/tauri-apps/tauri) to develop desktop
 
 ## Reference
 
