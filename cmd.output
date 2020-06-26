@@ -1,4 +1,10 @@
 [33m[backend]
 |    `-<app.ts>[39m: [32mdeno run --allow-net --allow-read backend/app.ts[39m
 [33m[dart_learn]
-|    `-<symbol.dart>[39m: [32mdart dart_learn/symbol.dart[39m
+|    `-<tasks.dart>[39m: [32mdart dart_learn/tasks.dart[39m
+[33m|    `-<event_queue.dart>[39m: [32mdart dart_learn/event_queue.dart[39m
+[33m|    `-<class.dart>[39m: [32mdart dart_learn/class.dart[39m
+[33m|    `-<isolate.dart>[39m: [32mdart dart_learn/isolate.dart[39m
+[33m|    `-<symbol.dart>[39m: [32mdart dart_learn/symbol.dart[39m
+[33m|    `-<class_method.dart>[39m: [32mdart dart_learn/class_method.dart[39m
+[33m|    `-<data_type.dart>[39m: [32mdart dart_learn/data_type.dart[39m

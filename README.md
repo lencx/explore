@@ -5,7 +5,7 @@
 ## Start
 
 ```bash
-# command
+# command help
 deno run --allow-read --allow-write cmd.ts [--update[=tree]]
 
 # see: https://github.com/denosaurs/denon
@@ -15,8 +15,11 @@ deno run --allow-read --allow-write cmd.ts [--update[=tree]]
 # run the browser
 denon run --allow-net --allow-read backend/app.ts
 
-# run app
+# run dchat app
 # cd app
+# iOS simulator
+open -a Simulator
+
 flutter run
 ```
 
@@ -27,6 +30,7 @@ flutter run
 |   |- [routes] # handle routes
 |   |- app.ts # service entry
 |   `- deps.ts # dependency
+|- [app] # dchat app
 |- [frontend]
 |   `- index.html
 |- [dart_learn] # dart learning
@@ -37,7 +41,7 @@ flutter run
 
 ## TODO
 
-* [ ] Use `flutter` to develop APP
+* [ ] use `flutter` to develop APP
 
 ## Reference
 
