@@ -23,7 +23,7 @@ open -a Simulator
 flutter run
 
 # format check
-./app/fmt.sh
+./fmt.sh
 ```
 
 ```bash
@@ -50,3 +50,4 @@ flutter run
 ## Reference
 
 * [Learn Deno: Chat app](https://aralroca.com/blog/learn-deno-chat-app)
+* [Building beautiful UIs with Flutter](https://codelabs.developers.google.com/codelabs/flutter/#0)

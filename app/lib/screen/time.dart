@@ -10,12 +10,12 @@ import 'package:intl/intl.dart';
 final fmtDate = DateFormat('yyyy-mm-dd HH:mm:ss');
 final timePeriod = Duration(seconds: 1);
 
-class HomePage extends StatefulWidget {
+class TimeScreen extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _TimeScreenState createState() => _TimeScreenState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _TimeScreenState extends State<TimeScreen> {
   String currTime;
 
   @override
@@ -42,7 +42,12 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Center(
-      child: Text(currTime),
+      child: Column(
+        children: <Widget>[
+          Text(currTime),
+          Text(currTime),
+        ],
+      ),
     ));
   }
 }
