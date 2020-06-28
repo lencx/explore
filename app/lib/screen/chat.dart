@@ -3,6 +3,12 @@
  * @create_at: Jun 28, 2020
  **/
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+
+import 'package:dchat/widgets/chat_message.dart';
+
+final fmtDate = DateFormat('mm-dd HH:mm:ss');
+String _name = 'lencx';
 
 class ChatScreen extends StatefulWidget {
   @override
@@ -11,9 +17,19 @@ class ChatScreen extends StatefulWidget {
 
 class _ChatScreenState extends State<ChatScreen> {
   final _textControl = TextEditingController();
+  final List<ChatMessage> _chatMessages = [];
 
   void _handleSend(String value) {
-    // TODO: handle text
+    if (value == '') return;
+    final msg = ChatMessage(
+      message: value,
+      name: _name,
+      date: fmtDate.format(DateTime.now()),
+      // avatar: 'Z',
+    );
+    setState(() {
+      _chatMessages.insert(0, msg);
+    });
     _textControl.clear();
   }
 
@@ -28,10 +44,10 @@ class _ChatScreenState extends State<ChatScreen> {
           children: <Widget>[
             Flexible(
               child: ListView.builder(
-                padding: EdgeInsets.all(8.0),
                 reverse: true,
-                // itemBuilder: (_, int idx) => Text('test ===> $idx'),
-                itemBuilder: (_, int idx) => _chatMessage(idx),
+                padding: EdgeInsets.all(8.0),
+                itemBuilder: (_, int idx) => _chatMessages[idx],
+                itemCount: _chatMessages.length,
               )
             ),
             Divider(height: 1.0),
@@ -41,29 +57,6 @@ class _ChatScreenState extends State<ChatScreen> {
             )
           ],
         )
-      ),
-    );
-  }
-
-  Widget _chatMessage(int idx) {
-    return Container(
-      margin: EdgeInsets.symmetric(vertical: 10.0),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Container(
-            child: CircleAvatar(
-              child: Text('Z'),
-            ),
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Text('lencx HH:mm:ss'),
-              Text('$idx'),
-            ],
-          )
-        ],
       ),
     );
   }
