@@ -27,6 +27,8 @@ dependencies:
   # including message translation, plurals and genders,
   # date/number formatting and parsing, and bidirectional text.
   intl: ^0.16.1
+  # The brightest, hippest, coolest router for Flutter.
+  fluro: ^1.6.3
 
 
   # The following adds the Cupertino Icons font to your application.

@@ -5,8 +5,9 @@
 import 'package:flutter/material.dart';
 
 class ChatMessage extends StatelessWidget {
-  ChatMessage({ this.message, this.avatar, this.name, this.date });
+  ChatMessage({this.message, this.avatar, this.name, this.date, this.animationController});
   final message, avatar, name, date;
+  final AnimationController animationController;
 
   @override
   Widget build(BuildContext context) {
