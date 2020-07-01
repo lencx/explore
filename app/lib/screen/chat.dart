@@ -5,7 +5,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import 'package:dchat/widgets/chat_message.dart';
+import 'package:howl/widgets/chat_message.dart';
 
 final fmtDate = DateFormat('MM-dd HH:mm:ss');
 String _name = 'lencx';

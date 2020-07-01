@@ -5,18 +5,18 @@
 import 'package:flutter/material.dart';
 // import 'package:fluro/fluro.dart';
 
-import 'package:dchat/screen/time.dart';
-import 'package:dchat/screen/chat.dart';
+import 'package:howl/screen/time.dart';
+import 'package:howl/screen/chat.dart';
 
-class DchatApp extends StatefulWidget {
+class HowlApp extends StatefulWidget {
   @override
   State createState() {
-    return DchatAppState();
+    return HowlAppState();
   }
 }
 
-class DchatAppState extends State<DchatApp> {
-  // DchatAppState() {
+class HowlAppState extends State<HowlApp> {
+  // HowlAppState() {
   //   // final router = Router();
   //   // Routes.configureRoutes(router);
   //   // Application.router = router;
@@ -26,7 +26,7 @@ class DchatAppState extends State<DchatApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Dchat',
+        title: 'Howl',
         // initialRoute: '/chat',
         theme: ThemeData(
           // This is the theme of your application.

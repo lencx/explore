@@ -1,4 +1,4 @@
-package com.example.dchat
+package com.example.howl
 
 import io.flutter.embedding.android.FlutterActivity
 
