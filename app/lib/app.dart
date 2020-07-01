@@ -3,16 +3,31 @@
  * @create_at: Jun 26, 2020
  **/
 import 'package:flutter/material.dart';
+// import 'package:fluro/fluro.dart';
+
 import 'package:dchat/screen/time.dart';
 import 'package:dchat/screen/chat.dart';
 
-class DchatApp extends StatelessWidget {
+class DchatApp extends StatefulWidget {
+  @override
+  State createState() {
+    return DchatAppState();
+  }
+}
+
+class DchatAppState extends State<DchatApp> {
+  // DchatAppState() {
+  //   // final router = Router();
+  //   // Routes.configureRoutes(router);
+  //   // Application.router = router;
+  // }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Dchat',
-        initialRoute: '/chat',
+        // initialRoute: '/chat',
         theme: ThemeData(
           // This is the theme of your application.
           //
@@ -32,6 +47,7 @@ class DchatApp extends StatelessWidget {
         routes: {
           '/chat': (context) => ChatScreen(),
           '/time': (context) => TimeScreen(),
-        });
+        },
+      );
   }
 }

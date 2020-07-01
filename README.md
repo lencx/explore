@@ -36,6 +36,10 @@ flutter run
 |- [app] # dchat app
 |- [frontend]
 |   `- index.html
+|- [web] # (react + dva + snowpack)
+|   |- public
+|   |- src
+|   `- ...
 |- [dart_learn] # dart learning
 |   `- ... # example
 |- .env # config
@@ -46,6 +50,7 @@ flutter run
 
 * [ ] use `flutter` to develop APP
 * [ ] use [`tauri`](https://github.com/tauri-apps/tauri) to develop desktop
+* [ ] use [snowpack + react + dva](https://github.com/pikapkg/snowpack) to develop Web
 
 ## Reference
 

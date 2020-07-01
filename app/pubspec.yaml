@@ -28,6 +28,7 @@ dependencies:
   # date/number formatting and parsing, and bidirectional text.
   intl: ^0.16.1
   # The brightest, hippest, coolest router for Flutter.
+  # https://github.com/theyakka/fluro
   fluro: ^1.6.3
 
 
