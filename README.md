@@ -1,29 +1,15 @@
 # Explore
 
 * [Deno](https://deno.land)
+* [Vite](https://github.com/vitejs/vite)
+* [tauri](https://github.com/tauri-apps/tauri)
+* [Flutter](https://flutter.dev)
 
 ## Start
 
 ```bash
 # command help
 deno run --allow-read --allow-write cmd.ts [--update[=tree]]
-
-# see: https://github.com/denosaurs/denon
-# Monitor any changes in your Deno application and automatically restart
-# deno install --allow-read --allow-run --allow-write -f --unstable https://deno.land/x/denon/denon.ts
-
-# run the browser
-denon run --allow-net --allow-read backend/app.ts
-
-# run explore app
-# cd app
-# iOS simulator
-open -a Simulator
-
-flutter run
-
-# format check
-./fmt.sh
 ```
 
 ```bash
@@ -36,7 +22,7 @@ flutter run
 |- [app] # explore app
 |- [frontend]
 |   `- index.html
-|- [web] # (react + dva + snowpack)
+|- [web] # (vite + react)
 |   |- public
 |   |- src
 |   `- ...
@@ -48,9 +34,9 @@ flutter run
 
 ## TODO
 
-* [ ] use `flutter` to develop APP
-* [ ] use [`tauri`](https://github.com/tauri-apps/tauri) to develop desktop
-* [ ] use [snowpack + react + dva](https://github.com/pikapkg/snowpack) to develop Web
+* [ ] APP: flutter
+* [ ] Desktop: tauri
+* [ ] Web: vite + react
 
 ## Reference
 
