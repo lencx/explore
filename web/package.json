@@ -1,29 +1,17 @@
 {
+  "name": "web",
+  "version": "0.0.0",
   "scripts": {
-    "start": "snowpack dev",
-    "build": "snowpack build",
-    "test": "jest",
-    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
-    "lint": "prettier --check \"src/**/*.{js,jsx,ts,tsx}\""
+    "dev": "vite",
+    "build": "vite build"
   },
   "dependencies": {
-    "dva": "^2.6.0-beta.20",
-    "dva-core": "^2.0.2",
-    "dva-loading": "^3.0.20",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0",
-    "redux": "^4.0.5",
-    "redux-thunk": "^2.3.0"
+    "@pika/react": "^16.13.1",
+    "@pika/react-dom": "^16.13.1"
   },
   "devDependencies": {
-    "@snowpack/app-scripts-react": "^1.4.0",
-    "@testing-library/jest-dom": "^5.5.0",
-    "@testing-library/react": "^10.0.3",
-    "@types/react": "^16.9.35",
-    "@types/react-dom": "^16.9.8",
-    "jest": "^25.4.0",
-    "prettier": "^2.0.0",
-    "snowpack": "^2.5.0",
-    "typescript": "^3.8.0"
+    "sass": "^1.26.9",
+    "vite": "^1.0.0-beta.3",
+    "vite-plugin-react": "^3.0.0"
   }
 }
