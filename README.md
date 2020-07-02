@@ -1,4 +1,4 @@
-# Howl
+# Explore
 
 * [Deno](https://deno.land)
 
@@ -15,7 +15,7 @@ deno run --allow-read --allow-write cmd.ts [--update[=tree]]
 # run the browser
 denon run --allow-net --allow-read backend/app.ts
 
-# run howl app
+# run explore app
 # cd app
 # iOS simulator
 open -a Simulator
@@ -27,13 +27,13 @@ flutter run
 ```
 
 ```bash
-[howl]
+[explore]
 |- [backend]
 |   |- [middleware] # service middleware
 |   |- [routes] # handle routes
 |   |- app.ts # service entry
 |   `- deps.ts # dependency
-|- [app] # howl app
+|- [app] # explore app
 |- [frontend]
 |   `- index.html
 |- [web] # (react + dva + snowpack)

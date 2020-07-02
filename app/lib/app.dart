@@ -5,18 +5,18 @@
 import 'package:flutter/material.dart';
 // import 'package:fluro/fluro.dart';
 
-import 'package:howl/screen/time.dart';
-import 'package:howl/screen/chat.dart';
+import 'package:explore/screen/time.dart';
+import 'package:explore/screen/chat.dart';
 
-class HowlApp extends StatefulWidget {
+class ExploreApp extends StatefulWidget {
   @override
   State createState() {
-    return HowlAppState();
+    return ExploreAppState();
   }
 }
 
-class HowlAppState extends State<HowlApp> {
-  // HowlAppState() {
+class ExploreAppState extends State<ExploreApp> {
+  // ExploreAppState() {
   //   // final router = Router();
   //   // Routes.configureRoutes(router);
   //   // Application.router = router;
@@ -26,7 +26,7 @@ class HowlAppState extends State<HowlApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Howl',
+        title: 'Explore',
         // initialRoute: '/chat',
         theme: ThemeData(
           // This is the theme of your application.
