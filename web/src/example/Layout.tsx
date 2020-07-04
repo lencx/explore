@@ -1,20 +1,37 @@
+/**
+ * @author: lencx
+ * @create_at: Jul 04, 2020
+ */
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Router from '/@route/Router';
-import { CONFIG } from '/@/routes';
+import { connect } from 'dva';
 
-export default function Layout(props) {
+import './style.scss';
+
+function Layout(props) {
   return (
     <div>
-      <ul>
+      <nav>
         <li>
-          {CONFIG.authenticated
+          {props.authenticated
             ? <Link to='/signout'> Sign Out </Link>
             : <Link to='/login'> Login </Link>}
         </li>
         <li><Link to='/protected'> Protected </Link></li>
-      </ul>
-      <Router routes={props.routes} />
+      </nav>
+      <div className='main'>
+        <Router
+          routes={props.routes}
+          store={{
+            authenticated: props.authenticated,
+            dispatch: props.dispatch,
+          }}
+        />
+      </div>
     </div>
   )
 }
+
+export default connect(state => state.global)(Layout)

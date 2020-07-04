@@ -1,11 +1,18 @@
+/**
+ * @author: lencx
+ * @create_at: Jul 04, 2020
+ */
+
 import { lazy } from 'react';
+import { RouteOption } from '/@routes/types';
 
 export const CONFIG = {
-  authenticated: false,
+  // redux: models/global
+  // authenticated: false,
   authRedirect: '/login',
 };
 
-export default [
+const routes: RouteOption[] = [
   {
     path: '/',
     component: lazy(() => import('./example/Layout')),
@@ -25,4 +32,6 @@ export default [
       },
     ],
   },
-];
+]
+
+export default routes;

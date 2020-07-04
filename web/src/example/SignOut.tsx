@@ -1,17 +1,24 @@
-import React from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import { CONFIG } from '/@/routes';
+/**
+ * @author: lencx
+ * @create_at: Jul 04, 2020
+ */
 
-export default function SignOut() {
-  const history = useHistory();
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+export default function SignOut(props) {
   const handleOut = () => {
-    CONFIG.authenticated = false;
-    history.push('/login');
+    props.store.dispatch({
+      type: 'global/setState',
+      payload: { authenticated: false },
+    })
+    props.history.push('/login');
   }
   return (
     <div>
       <h1>SignOut Page</h1>
       <button onClick={handleOut}>SignOut</button>
+      <Link to="/">Back To Home</Link>
     </div>
   )
 }

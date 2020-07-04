@@ -1,3 +1,8 @@
+/**
+ * @author: lencx
+ * @create_at: Jul 04, 2020
+ */
+
 import { ComponentType, LazyExoticComponent, ReactNode } from 'react';
 
 export interface RouteOption {

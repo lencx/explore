@@ -6,8 +6,8 @@
 export default {
   namespace: 'global',
   state: {
-    name: 'myApp',
-    count: 0,
+    name: `lencx's app`,
+    authenticated: false,
   },
   reducers: {
     setState(state: any, { payload }: any) {

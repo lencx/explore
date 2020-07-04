@@ -22,7 +22,7 @@ deno run --allow-read --allow-write cmd.ts [--update[=tree]]
 |- [app] # explore app
 |- [frontend]
 |   `- index.html
-|- [web] # (vite + react)
+|- [web] # (vite + react + dva)
 |   |- public
 |   |- src
 |   `- ...
@@ -36,7 +36,7 @@ deno run --allow-read --allow-write cmd.ts [--update[=tree]]
 
 * [ ] APP: flutter
 * [ ] Desktop: tauri
-* [ ] Web: vite + react
+* [ ] Web: vite + react + dva
 
 ## Reference
 

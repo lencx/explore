@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  background: #ddd;
+  list-style: none;
+  li {
+    display: inline-block;
+    a {
+      background: rgb(38, 203, 124);
+    }
+  }
+}
+
+button, a {
+  display: inline-block;
+  background: rgb(56, 132, 255);
+  padding: 0 10px;
+  height: 30px;
+  line-height: 30px;
+  border: none;
+  color: #fff;
+  border-radius: 10px;
+  font-size: 14px;
+  margin: 5px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.main {
+  padding: 10px;
+  h1 {
+    font-size: 18px !important;
+  }
+}
