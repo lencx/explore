@@ -6,7 +6,7 @@
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
-export default function Login(props) {
+export default function Login(props: any) {
   const handleLogin = () => {
     props.store.dispatch({
       type: 'global/setState',

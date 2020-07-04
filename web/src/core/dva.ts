@@ -3,6 +3,7 @@
  * @create_at: Jul 04, 2020
  */
 
+// @ts-nocheck
 import { create } from 'dva-core';
 import createLoading from 'dva-loading';
 import dva from 'dva';

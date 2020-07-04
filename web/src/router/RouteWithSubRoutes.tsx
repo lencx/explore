@@ -9,20 +9,24 @@ import { Redirect, Route } from 'react-router-dom';
 import { CONFIG } from '../routes';
 import { RouteOption } from './types';
 
-const RouteWithSubRoutes = (route: RouteOption) => {
+interface RouteWithSubRoutesProps extends RouteOption {
+  store?: any;
+}
+
+const RouteWithSubRoutes = (routeProps: RouteWithSubRoutesProps) => {
   /** Authenticated flag */
-  const authenticated: boolean = route.store.authenticated;
+  const authenticated: boolean = routeProps.store.authenticated;
 
   return (
-    <Suspense fallback={route.fallback || <div>loading...</div>}>
+    <Suspense fallback={routeProps.fallback || <div>loading...</div>}>
       <Route
-        path={route.path}
+        path={routeProps.path}
         render={(props) => {
-          const comp = route.component &&
-                <route.component {...props} routes={route.routes} store={route.store} />;
-          return route.redirect
-            ? <Redirect to={route.redirect}/>
-            : route.private
+          const comp = routeProps.component &&
+                <routeProps.component {...props} routes={routeProps.routes} store={routeProps.store} />;
+          return routeProps.redirect
+            ? <Redirect to={routeProps.redirect}/>
+            : routeProps.private
               ? (authenticated ? comp : <Redirect to={CONFIG.authRedirect} />)
               : comp
         }}

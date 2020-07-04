@@ -9,8 +9,8 @@ const config: UserConfig = {
   // the key must start and end with a slash
   alias: {
     '/@/': path.resolve(__dirname, 'src'),
-    '/@route/': path.resolve(__dirname, 'src/router'),
     '/@core/': path.resolve(__dirname, 'src/core'),
+    '/@route/': path.resolve(__dirname, 'src/router'),
   },
 };
 

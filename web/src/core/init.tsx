@@ -3,6 +3,7 @@
  * @create_at: Jul 04, 2020
  */
 
+// @ts-nocheck
 import React, { StrictMode } from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';

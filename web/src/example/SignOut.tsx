@@ -6,7 +6,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function SignOut(props) {
+export default function SignOut(props: any) {
   const handleOut = () => {
     props.store.dispatch({
       type: 'global/setState',

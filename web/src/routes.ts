@@ -4,7 +4,7 @@
  */
 
 import { lazy } from 'react';
-import { RouteOption } from '/@routes/types';
+import { RouteOption } from '/@route/types';
 
 export const CONFIG = {
   // redux: models/global

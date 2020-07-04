@@ -10,7 +10,7 @@ import { connect } from 'dva';
 
 import './style.scss';
 
-function Layout(props) {
+function Layout(props: any) {
   return (
     <div>
       <nav>
@@ -34,4 +34,4 @@ function Layout(props) {
   )
 }
 
-export default connect(state => state.global)(Layout)
+export default connect((state: any) => state.global)(Layout)

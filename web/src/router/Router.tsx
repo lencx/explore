@@ -10,7 +10,7 @@ import { RouteOption } from './types';
 import RouteWithSubRoutes from './RouteWithSubRoutes';
 
 interface RouterProps {
-  route: RouteOption[];
+  routes: RouteOption[];
   store: {
     [key: string]: any;
   };
